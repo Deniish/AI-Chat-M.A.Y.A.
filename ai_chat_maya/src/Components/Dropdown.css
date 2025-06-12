@@ -1,0 +1,166 @@
+:root {
+  --primary-bg: #242526;
+  --secondary-bg: #fff;
+  --primary-text-color: #555;
+  --secondary-text-color: #cecece;
+  --border-radius: 8px;
+  --speed: 500ms;
+}
+.dropdown-container {
+  background-color: #f0f0f0; 
+  color: #1a73e8;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  z-index: 1000;
+}
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--primary-bg);
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.menu-trigger img {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  overflow: hidden;
+  cursor: pointer;
+  background-color: #ffffffdb;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  
+  /* Adding background circle shadow rim effect */
+  border: 4px solid rgba(255, 255, 255, 0.2); /* Light outer rim */
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5), 0 0 25px rgba(0, 0, 0, 0.2); /* Dark shadow rim */
+}
+
+.menu-trigger img:hover {
+  transform: scale(0.95); /* Zoom out effect */
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.329), 0 0 30px rgba(143, 143, 143, 0.153); /* Enhanced shadow effect on hover */
+}
+
+
+.dropdown-menu {
+  position: absolute;
+  top: 100px;
+  right: 20px;
+  background-color: #97979715;
+  border-radius: var(--border-radius);
+  padding: 10px 20px;
+  width: 200px;
+  border: 1px solid rgba(178, 178, 178, 0.168);
+  color: var(--secondary-bg);
+}
+
+.dropdown-menu::before {
+  content: '';
+  position: absolute;
+  top: -10px;
+  right: 20px;
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 10px solid #979797; /* Color of the dropdown background */
+  transform: rotate(0deg); /* No need to rotate */
+}
+
+.dropdown-menu.active {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  transition: var(--speed) ease;
+}
+
+.dropdown-menu.inactive {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-20px);
+  transition: var(--speed) ease;
+}
+
+h3 {
+  width: 100%;
+  text-align: center;
+  font-size: 18px;
+  padding: 20px 0;
+  font-weight: 500;
+  font-size: 18px;
+  color: var(--secondary-bg);
+  line-height: 1.2rem;
+}
+
+h3 span {
+  font-size: 14px;
+  color: var(--secondary-text-color);
+  font-weight: 400;
+}
+
+.dropdown-menu ul li {
+  padding: 10px 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease, border-radius 0.3s ease;
+}
+.dropdown-menu ul li:hover {
+  background-color: rgba(255, 255, 255, 0.1); /* Hover background */
+  border-radius: 8px; /* Rounded corners on hover */
+ 
+}
+
+.dropdown-menu ul li a {
+  transition: color 0.3s ease; /* Smooth transition for text color */
+}
+
+.dropdown-menu ul li:hover img {
+  opacity: 1;
+  cursor: pointer;
+}
+
+/* Last item - special hover style */
+.dropdown-menu ul li:last-child:hover a {
+  color: rgb(212, 33, 9); /* Red color only on last item hover */
+}
+
+.dropdown-menu ul li:hover:last-child {
+  background-color: rgba(255, 255, 255, 0.2); /* Slightly darker background for last item */
+  border-radius: 12px;
+}
+
+
+.dropdownItem {
+  display: flex;
+  margin: 10px auto;
+}
+
+.dropdownItem img {
+  max-width: 20px;
+  margin-right: 10px;
+  opacity: 0.5;
+  transition: var(--speed);
+}
+
+.dropdownItem a {
+  max-width: 100px;
+  margin-left: 10px;
+  transition: var(--speed);
+}

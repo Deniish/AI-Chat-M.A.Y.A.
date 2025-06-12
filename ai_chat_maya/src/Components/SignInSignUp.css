@@ -1,0 +1,81 @@
+.auth-container {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+  }
+  
+  .auth-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: rgba(0, 0, 0, 0.766);
+    transition: transform 0.3s ease, color 0.3s ease; 
+  }
+  .auth-container h2:hover {
+    color: #00083e; /* Hover color change for interactivity (optional) */
+    transform: scale(1.05); /* Slight scaling on hover for effect */
+    text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3); 
+  }
+  .auth-container form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .auth-container input {
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .auth-container button {
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  .submit:hover{
+    text-decoration: underline;
+  } 
+  .auth-container button:hover {
+    background-color: #0056b3;
+    text-decoration: underline;
+  }
+  
+  .error-message {
+    color: red;
+    margin-bottom: 15px;
+    text-align: center;
+  }
+  /* .stay-logged-out-btn {
+    width: 100%;
+    padding: 10px;
+    background-color: #050505; 
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px; 
+  }
+  
+  .stay-logged-out-btn:hover {
+    background-color: #c82333;  
+} */
+.style-stay-logged-out {
+    color: rgba(0, 0, 0, 0.54);
+    transition: background-color 0.3s ease, transform 0.3s ease, text-decoration 0.3s ease;
+    text-align: right; /* Moves the text to the right */
+    padding-right: 10px; /* Adds spacing to the right */
+    cursor: pointer;
+    text-decoration: none; /* No underline initially */
+}
+
+.style-stay-logged-out:hover {
+    color: rgb(0, 0, 0);
+    transform: scale(1.05);
+    text-decoration: underline; /* Underline on hover */
+}

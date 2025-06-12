@@ -1,0 +1,466 @@
+  /* Common Styles */
+  @import url('https://fonts.googleapis.com/css2?family=Playwrite+GB+S:ital,wght@0,100..400;1,100..400&display=swap');
+
+  html {
+    overflow-x: hidden;
+  }
+  .chat-container {
+    background: transparent;
+    position: relative;
+    font-family: 'Playwrite GB S', serif;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 100%;
+    padding: 10px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    z-index: 1;
+  }
+
+  .spacer {
+    flex-grow: 1;
+    z-index: 0;
+  }
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 100px; 
+  }
+  .navbar-content {
+    display: flex;
+    justify-content: space-between; /* Align the title and UserLogo on opposite sides */
+    align-items: center;
+    width: 100%;
+  }
+  .tab-container {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+    
+  }
+  .logoimage{
+    width: 40px; 
+    height: 40px; 
+    margin-right: 8px;
+    color: #000000;
+    filter: sepia(1) hue-rotate(180deg) saturate(500%);
+  }
+  /* ___________________________________________________Light Mode_________________________________________________________________*/
+  .App-light-mode {
+      background-color: #00000035;
+      color: #333;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      margin: 0;
+      padding: 0;
+      transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
+  }
+  .App-light-mode::before {
+    content: "Hey Mayan's🖐🏿";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'Playwrite GB S';
+    font-size: 6vw;
+    color: rgba(0, 0, 0, 0.235);
+    z-index: 0;
+    pointer-events: none;
+    transition: color 0.5s ease-in-out;
+  }
+
+  .navbar-light-mode {
+    background-color: #a5c2e0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
+  }
+  
+  .text-span {
+    font-family: 'Playfair Display', serif; /* Elegant font choice, or you can use 'Poppins' for a modern look */
+    font-weight: 800; /* Extra bold to make it 'fat' */
+    font-size: 3rem; /* Make it larger */
+    letter-spacing: 2px; /* Add spacing between letters for a modern effect */
+    color: #1a73e8; /* Primary color (Google blue tone) */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+    background: linear-gradient(45deg, #6c63ff, #00ddff); 
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; 
+    transition: transform 0.3s ease, color 0.3s ease; 
+  }
+  
+  .text-span:hover {
+    color: #ff6347; /* Hover color change for interactivity (optional) */
+    transform: scale(1.05); /* Slight scaling on hover for effect */
+    text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3); /* Stronger shadow on hover */
+  }
+  
+  .title-light-mode {
+    color: #1a73e8;
+    margin-left: 2vw;
+    font-family: 'Playwrite GB S', serif;
+    font-weight: bold;
+    font-size: 5vh;
+    display: flex;
+    align-items: center;
+    text-shadow: 2px 2px 10px #000000d8;
+  }
+  .tab-light-mode {
+    padding: 10px 20px;
+    background-color: #44a4d1;
+    color: #333;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.tab-light-mode:hover {
+    background-color: #45bbff;
+    color: #333;
+    transform: rotate3d(2deg);
+    transform: scale(1.1);
+}
+  .toggle-mode-light-mode {
+    margin-right: 4px;
+    color: #1a73e8;
+    transition: color 0.2s ease-in-out, transform 0.2s ease-in-out;
+  }
+
+  .toggle-mode-light-mode:hover {
+    transform: scale(0.9);
+  }
+
+  .usr_msg-light-mode,
+  .ai_msg-light-mode {
+    background-color: #1a73e8;
+    color: #dddddd;
+    border-radius: 20px;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    padding: 14px 4px 0px 4px;
+    font-family: 'Playwrite GB S', serif;
+    font-weight: 500;
+    box-shadow: 5px 4px 6px 3px rgba(0, 0, 0, 0.1);
+    height: fit-content;
+    max-width: 45%;
+    word-wrap: break-word;
+    transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
+  }
+
+  .usr_msg-light-mode {
+    align-self: flex-end;
+  }
+
+  .ai_msg-light-mode {
+    align-self: flex-start;
+  }
+
+
+  /* .chat-input-container-light-mode {
+    display: flex;
+    align-items: center;
+    background-color:  #a5c2e0;
+    border-radius: 20px;
+    padding: 10px;
+    box-shadow: inset -2px -1px 20px 7px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    margin-bottom : 4px;
+    transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
+  }
+
+  .chat-input-light-mode {
+    flex-grow: 1;
+    border: none;
+    background: transparent;
+    color: #000;
+    font-family: 'Playwrite GB S';
+    font-size: 16px;
+    outline: none;
+    padding-left: 10px;
+  } */
+  .chat-input-container-light-mode {
+    position: relative;
+    display: flex;
+    align-items: center;
+    background-color: #00ddff4d;
+    border-radius: 20px;
+    padding: 10px;
+    margin: 25px auto 10px;       /* top:25px, sides:auto (centers), bottom:4px */
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+    width: 50%;
+    height: 7%;
+    transition: 
+      background-color 0.5s ease-in-out,
+      color 0.5s ease-in-out,
+      border-color 0.3s ease,
+      box-shadow 0.3s ease,
+      transform 0.3s ease;
+  }
+  
+
+
+  .chat-input-container-light-mode:focus-within {
+    transform: scale(1.05); 
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); 
+    outline: none; 
+  }
+
+
+  @keyframes slideUp {
+    from {
+      transform: translateY(100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  .chat-input-light-mode {
+    flex-grow: 1;
+    border: none;
+    background: transparent;
+    color: #011a20;
+    font-family: 'Playwrite GB S', serif;
+    font-size: 16px;
+    outline: none;
+    padding-left: 10px;
+    transition: color 0.3s ease;
+  } 
+  .chat-input-light-mode::placeholder {
+    color: #555;
+  }
+
+  .file-upload-button-light-mode,
+  .send-button-light-mode {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    margin-left: 10px;
+    display: flex;
+    align-items: center;
+    transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
+  }
+
+  .file-upload-button-light-mode:hover,
+  .send-button-light-mode:hover {
+    color: #1a73e8;
+    transform: scale(1.2);
+  }
+
+  .pending-button-light-mode {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    margin-left: 10px;
+    display: flex;
+    align-items: center;
+    transition: all 0.3s;
+  }
+  /* input */
+
+  /* ___________________________________________________Dark Mode_________________________________________________________________*/
+  .App-dark-mode {
+    background-color: #1d1d1d;
+    color: #fff;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+    transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
+  }
+  .App-dark-mode::before {
+      content: "Hey Mayan's🖐🏻";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-family: 'Playwrite GB S', serif;
+      font-size: 6vw;
+      color: rgba(175, 175, 175, 0.1);
+      z-index: 0;
+      pointer-events: none;
+      transition: color 0.5s ease-in-out;
+    }
+
+  .navbar-dark-mode {
+    background-color: #232323;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
+  }
+
+  .title-dark-mode {
+    color: #4a90e2;
+    margin-left: 2vw;
+    font-family: 'Playwrite GB S', serif;
+    font-weight: bold;
+    font-size: 5vh;
+    display: flex;
+    text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.628);
+  }
+
+  .toggle-mode-dark-mode {
+    margin-right: 4px;
+    transition: color 0.2s ease-in-out, transform 0.2s ease-in-out;
+  }
+
+  .toggle-mode-dark-mode:hover {
+    color: #1a73e8;
+    transform: scale(0.9);
+  }
+  .tab-dark-mode {
+    padding: 10px 20px;
+    background-color: rgb(39, 39, 39);
+    color: #c9c9c9;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .usr_msg-dark-mode,
+  .ai_msg-dark-mode {
+    background-color: #131313;
+    color: #c9c9c9;
+    border-radius: 20px;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    padding: 14px 4px 0px 4px;
+    font-family: 'Playwrite GB S', serif;
+    font-weight: 500;
+    box-shadow: 0 2px 4px rgba(78, 78, 78, 0.5);
+    height: fit-content;
+    max-width: 45%;
+    word-wrap: break-word;
+    transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
+  }
+
+  .usr_msg-dark-mode {
+    align-self: flex-end;
+  }
+
+  .ai_msg-dark-mode {
+    align-self: flex-start;
+  }
+  /*
+  .chat-input-container-dark-mode {
+    display: flex;
+    align-items: center;
+    background-color: #000000;
+    border-radius: 20px;
+    padding: 10px;
+    box-shadow: inset 0px 0px 17px 2px #97979733;
+    width: 100%;
+    margin-bottom : 4px;
+    transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
+  }
+
+  .chat-input-dark-mode {
+    flex-grow: 1;
+    border: none;
+    background: transparent;
+    color: #ccc;
+    font-family: 'Playwrite GB S', serif;
+    font-size: 16px;
+    outline: none;
+    padding-left: 10px;
+  }*/
+
+  .chat-input-dark-mode::placeholder {
+    color: #949494;
+  }
+  /* 2nd input */
+  /* .page-container {
+    display: flex;
+    justify-content: center; 
+    align-items: center;   
+    height: 100vh; 
+    background-color: #222; 
+    position: relative;
+    left: 550px;
+    bottom: 10px;
+  } */
+
+  .chat-input-container-dark-mode {
+    position: relative;
+    display: flex;
+    align-items: center;
+    background-color: #333;
+    border-radius: 20px;
+    padding: 10px;
+    margin: 25px auto 10px;       /* top:25px, sides:auto (centers), bottom:4px */
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+    width: 50%;
+    height: 7%;
+    transition: 
+      background-color 0.5s ease-in-out,
+      color 0.5s ease-in-out,
+      border-color 0.3s ease,
+      box-shadow 0.3s ease,
+      transform 0.3s ease;
+  }
+
+
+  .chat-input-container-dark-mode:focus-within {
+    transform: scale(1.05); 
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); 
+    outline: none; 
+  }
+
+
+  @keyframes slideUp {
+    from {
+      transform: translateY(100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  .chat-input-dark-mode {
+    flex-grow: 1;
+    border: none;
+    background: transparent;
+    color: #ccc;
+    font-family: 'Playwrite GB S', serif;
+    font-size: 16px;
+    outline: none;
+    padding-left: 10px;
+    transition: color 0.3s ease;
+  } 
+
+  .file-upload-button-dark-mode,
+  .send-button-dark-mode {
+    background-color: transparent;
+    color: #fcfcfc;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    margin-left: 10px;
+    display: flex;
+    align-items: center;
+    transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
+  }
+
+  .file-upload-button-dark-mode:hover,
+  .send-button-dark-mode:hover {
+    color: #6e6e6e;
+    transform: scale(1.2);
+  }
+
+  .pending-button-dark-mode {
+    background-color: transparent;
+    color: #fcfcfc;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    margin-left: 10px;
+    display: flex;
+    align-items: center;
+    transition: all 0.4s;
+  }
